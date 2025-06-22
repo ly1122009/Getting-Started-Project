@@ -1,20 +1,23 @@
 # Set sample variable
-SET(EXTERNAL_LIBS FMT wiringPi GMP)
+# SET(EXTERNAL_LIBS FMT wiringPi GMP)
 
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.22)
 
 # Project settings
-project(Template-for-cpp LANGUAGE CXX)
+project(Template-Project-CPP LANGUAGES CXX)
 
 # Set the C++ standard globally
 set(CMAKE_CXX_STANDARD 20) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Define the target executable
-add_executable(template-project_main main.cpp)
+# Add libraries
+add_subdirectory(feature)
 
-# Link external libraries
-# target_link_libraries(template-project_main PRIVATE ${EXTERNAL_LIBS})
+# Define the target executable
+add_executable(Main_Executable main.cpp)
+
+# Link some target libraries
+target_link_libraries(Main_Executable PUBLIC Library)
 
 
