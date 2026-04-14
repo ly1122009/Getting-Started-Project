@@ -5,61 +5,61 @@ AccessModifierOffset: -4 # -2
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: Right
+#AlignEscapedNewlines: Left # Unknown to clang-format-4.0
 AlignOperands: true
-AlignTrailingComments: true
-AllowAllParametersOfDeclarationOnNextLine: true
+AlignTrailingComments: false
+AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: All
+AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: true # false
+AlwaysBreakTemplateDeclarations: false # true
 BinPackArguments: true
 BinPackParameters: true
 BraceWrapping:
-  AfterClass: true # false
-  AfterControlStatement: true # false
-  AfterEnum: true # false
-  AfterFunction: true # false
-  AfterNamespace: true # false
-  AfterObjCDeclaration: true # false
-  AfterStruct: true # false
-  AfterUnion: true # false
-  AfterExternBlock: true # false
-  BeforeCatch: true # false
-  BeforeElse: true # false
-  IndentBraces: true # false
-  SplitEmptyFunction: true
-  SplitEmptyRecord: true
-  SplitEmptyNamespace: true
+  AfterClass: false # true
+  AfterControlStatement: false # true
+  AfterEnum: false # true
+  AfterFunction: false # true
+  AfterNamespace: false # true
+  AfterObjCDeclaration: false # true
+  AfterStruct: false # true
+  AfterUnion: false # true
+  AfterExternBlock: false # true
+  BeforeCatch: false # true
+  BeforeElse: false # true
+  IndentBraces: false # true
+  #SplitEmptyFunction: true
+  #SplitEmptyRecord: true
+  #SplitEmptyNamespace: true
 BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Allman # Attach
+BreakBeforeBraces: Custom # Allman # Attach
 BreakBeforeInheritanceComma: false
-BreakBeforeTernaryOperators: true
+BreakBeforeTernaryOperators: false
 BreakConstructorInitializersBeforeComma: false
-BreakConstructorInitializers: BeforeColon
+BreakConstructorInitializers: BeforeComma # BeforeColon
 BreakAfterJavaFieldAnnotations: false
-BreakStringLiterals: true
-ColumnLimit: 80
+BreakStringLiterals: false # true
+ColumnLimit: 100
 CommentPragmas: "^ IWYU pragma:"
-CompactNamespaces: false
+#CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
-Cpp11BracedListStyle: true
+Cpp11BracedListStyle: false
 DerivePointerAlignment: false
 DisableFormat: false
 ExperimentalAutoDetectBinPacking: false
-FixNamespaceComments: true
+#FixNamespaceComments: false
 ForEachMacros:
   - foreach
   - Q_FOREACH
   - BOOST_FOREACH
-IncludeBlocks: Preserve
+#IncludeBlocks: Preserve
 IncludeCategories:
   - Regex: '^"(llvm|llvm-c|clang|clang-c)/'
     Priority: 2
@@ -68,42 +68,48 @@ IncludeCategories:
   - Regex: ".*"
     Priority: 1
 IncludeIsMainRegex: "(Test)?$"
-IndentCaseLabels: true # false
-IndentPPDirectives: None
+IndentCaseLabels: false # true
+#IndentPPDirectives: None
 IndentWidth: 4 #2
 IndentWrappedFunctionNames: false
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
-KeepEmptyLinesAtTheStartOfBlocks: true
+KeepEmptyLinesAtTheStartOfBlocks: false # true
 MacroBlockBegin: ""
 MacroBlockEnd: ""
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
-ObjCBlockIndentWidth: 2
-ObjCSpaceAfterProperty: false
+ObjCBlockIndentWidth: 4 # 2
+ObjCSpaceAfterProperty: true # false
 ObjCSpaceBeforeProtocolList: true
-PenaltyBreakAssignment: 2
-PenaltyBreakBeforeFirstCallParameter: 19
-PenaltyBreakComment: 300
-PenaltyBreakFirstLessLess: 120
-PenaltyBreakString: 1000
-PenaltyExcessCharacter: 1000000
+
+# Taken from git's rules
+PenaltyBreakAssignment: 10 # 2 # Unknown to clang-format-4.0
+PenaltyBreakBeforeFirstCallParameter: 30 # 19
+PenaltyBreakComment: 10 # 300
+PenaltyBreakFirstLessLess: 0 # 120
+PenaltyBreakString: 10 # 1000
+PenaltyExcessCharacter: 100 # 1000000
 PenaltyReturnTypeOnItsOwnLine: 60
-PointerAlignment: Left # Right
-ReflowComments: true
-SortIncludes: true
-SortUsingDeclarations: true
+PointerAlignment: Right # Left
+ReflowComments: false # true
+SortIncludes: false
+#SortUsingDeclarations: false # true
 SpaceAfterCStyleCast: false
 SpaceAfterTemplateKeyword: true
 SpaceBeforeAssignmentOperators: true
+#SpaceBeforeCtorInitializerColon: true # false
+#SpaceBeforeInheritanceColon: true # false
 SpaceBeforeParens: ControlStatements
+#SpaceBeforeRangeBasedForLoopColon: true # false
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 1
 SpacesInAngles: false
-SpacesInContainerLiterals: true
+SpacesInContainerLiterals: false # true
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-Standard: Cpp11
-TabWidth: 8
-UseTab: Never
+Standard: Cpp11 # Cpp03
+TabWidth: 4 # 8
+UseTab: Never # Always
+...
